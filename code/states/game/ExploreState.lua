@@ -13,12 +13,20 @@ function ExploreState:init()
         mapWidth = 100,
         mapHeight = 100
     }
+
+    self.player = Entity {
+        x = 0,
+        y = 0,
+        texture = gTextures['creatures'],
+        frame = 1,
+    }
 end
 
 function ExploreState:update(dt)
-
+    self.player:update(dt)
 end
 
 function ExploreState:render()
     self.map:render()
+    self.player:render()
 end

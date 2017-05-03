@@ -12,6 +12,8 @@ Timer = require 'code/libs/knife.timer'
 require 'code/StateMachine'
 require 'code/Util'
 
+require 'code/entity/Entity'
+
 require 'code/states/BaseState'
 require 'code/states/game/ExploreState'
 
