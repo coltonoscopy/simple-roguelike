@@ -8,14 +8,13 @@ require 'code/Dependencies'
 virtualWidth = 384
 virtualHeight = 216
 
-gMap = Map {
-    texture = gTextures['tiles'],
-    frames = gFrames['tiles'],
-    tileHeight = 24,
-    tileWidth = 24,
-    mapWidth = 100,
-    mapHeight = 100
+-- state machine controlling our various game states
+gGameSM = StateMachine {
+    ['explore'] = function() return ExploreState() end,
+    -- ['mainmenu'] = function() return MainMenuState() end,
+    -- ['menu'] = function() return MenuState() end
 }
+gGameSM:change('explore')
 
 function love.load()
     love.graphics.setFont(love.graphics.newFont('fonts/font.ttf', 8))
@@ -33,6 +32,8 @@ function love.resize(w, h)
 end
 
 function love.update(dt)
+    gGameSM:update(dt)
+
     love.keyboard.keysPressed = {}
     love.keyboard.keysReleased = {}
     love.mouse.buttonsPressed = {}
@@ -94,7 +95,7 @@ end
 function love.draw()
     push:apply('start')
 
-    gMap:render()
+    gGameSM:render()
 
     push:apply('end')
 end
