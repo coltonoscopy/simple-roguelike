@@ -34,7 +34,7 @@ function Map:generate()
         for x = 1, self.mapWidth do
             self.tiles[(y - 1) * self.mapWidth + x] = {
                 id = lume.weightedchoice {
-                    [5] = 15, [2] = 3, [3] = 3
+                    [855] = 15, [858] = 3, [914] = 3
                 },
                 owned = false
             }

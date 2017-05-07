@@ -5,8 +5,8 @@ love.mouse.buttonsReleased = {}
 
 require 'code/Dependencies'
 
-virtualWidth = 384
-virtualHeight = 216
+virtualWidth = 512
+virtualHeight = 288
 
 -- state machine controlling our various game states
 gGameSM = StateMachine {
@@ -19,7 +19,7 @@ gGameSM:change('explore')
 function love.load()
     love.graphics.setFont(love.graphics.newFont('fonts/font.ttf', 8))
     love.graphics.setDefaultFilter('nearest', 'nearest')
-    love.window.setTitle('Battle Engine')
+    love.window.setTitle('Roguelike RPG')
 
     push:setupScreen(virtualWidth, virtualHeight, 1280, 720, {
         fullscreen = false,

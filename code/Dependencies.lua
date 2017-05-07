@@ -21,14 +21,9 @@ require 'code/world/Map'
 
 gTextures = {
     ['tiles'] = love.graphics.newImage('graphics/tiles.png'),
-    ['creatures'] = love.graphics.newImage('graphics/creatures.png'),
-    ['fx24'] = love.graphics.newImage('graphics/fx24.png'),
-    ['fx32'] = love.graphics.newImage('graphics/fx32.png')
 }
 
 gFrames = {
-    ['creatures'] = GenerateQuads(gTextures['creatures'], 24, 24),
-    ['tiles'] = GenerateQuads(gTextures['tiles'], 24, 24),
-    ['fx24'] = GenerateQuads(gTextures['fx24'], 24, 24),
-    ['fx32'] = GenerateQuads(gTextures['fx32'], 32, 32)
+    ['creatures'] = GenerateQuads(gTextures['tiles'], 32, 32)
 }
+gFrames['tiles'] = gFrames['creatures']

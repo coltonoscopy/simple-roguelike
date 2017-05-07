@@ -28,5 +28,5 @@ function Entity:update(dt)
 end
 
 function Entity:render()
-    love.graphics.draw(self.texture, self.frame, self.x * 24, self.y * 24)
+    love.graphics.draw(self.texture, self.frame, self.x * 32, self.y * 32 - 8)
 end
